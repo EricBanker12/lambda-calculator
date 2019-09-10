@@ -4,9 +4,11 @@ import React from "react";
 
 //Import your array data to from the provided data file
 
+import {specials} from '../../../data'
+
 const Specials = () => {
   // STEP 2 - add the imported data to state
-
+  const [specialState, setSpecialState] = React.useState(specials)
   return (
     <div>
       {/* STEP 3 - Use .map() to iterate over your array data and return a button
