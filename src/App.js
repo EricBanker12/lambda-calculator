@@ -22,15 +22,15 @@ function App() {
   const [displayNum, setDisplayNum] = React.useState(numA)
 
   function inputNumber(label) {
-    if (!operator || operator == '=') { // set first number
-        if (numA == '0' || operator == '=') {
+    if (!operator || operator === '=') { // set first number
+        if (numA == '0' || operator === '=') {
             setNumA(label)
             setOperator('')
         }
         else setNumA(numA + label)
     }
     else { // set second number
-        if (!numB || numB == '0') setNumB(label)
+        if (!numB || numB === '0') setNumB(label)
         else setNumB(numB + label)
     }
   }
@@ -46,6 +46,24 @@ function App() {
       }
   }
 
+  function inputSpecial(label) {
+      switch (label) {
+        case 'C':
+            setNumA('0')
+            setOperator('')
+            setNumB('')
+            break
+        case '+/-':
+            if (numB) setNumB(String(Number(numB) * -1))
+            else setNumA(String(Number(numA) * -1))
+            break
+        case '%':
+            if (numB) setNumB(String(Number(numB) / 100))
+            else setNumA(String(Number(numA) / 100))
+            break
+      }
+  }
+
   React.useEffect(()=>{
     setDisplayNum(numB?numB:numA)
   },[numA,numB])
@@ -58,7 +76,7 @@ function App() {
         <Display displayNum={displayNum} />
         <div className='button-container'>
             <div>
-                <Specials className='specials-container' />
+                <Specials className='specials-container' handler={inputSpecial} />
                 <Numbers className='numbers-container' handler={inputNumber} />
             </div>
             <Operators className='operators-container' handler={inputOperator} />
