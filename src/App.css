@@ -48,7 +48,7 @@ button {
     height: 80px;
     width: 80px;
     border: none;
-    border-radius: 50%;
+    border-radius: 40px;
     background-color: #225d9e;
     color: white;
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.67);
@@ -66,6 +66,9 @@ button {
 .numbers-container>button {
     /* margin: 0 1%; */
     background-color: #184379;
+}
+.numbers-container>button:nth-of-type(10) {
+    width: 60%;
 }
 .operators-container {
     /* width: 25%; */
