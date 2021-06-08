@@ -6,7 +6,15 @@
     border: 2px solid grey;
     padding-bottom: 25px;
 }
+.logo-container {
+    height: 60px;
+    width: 450px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+}
 .display {
+    margin: 0 auto;
     margin-top: 25px;
     height: 100px;
     width: 450px;
@@ -19,4 +27,56 @@
     align-items: flex-end;
     padding-right: 8%;
     font-size: 5.0rem;
-  }
+}
+.button-container {
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 450px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.button-container>div:first-child {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+button {
+    cursor: pointer;
+    font-size: 25px;
+    height: 80px;
+    width: 80px;
+    border: none;
+    border-radius: 40px;
+    background-color: #225d9e;
+    color: white;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.67);
+    margin: 10px;
+}
+.specials-container {
+    display: flex;
+    justify-content: space-between;
+}
+.numbers-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.numbers-container>button {
+    /* margin: 0 1%; */
+    background-color: #184379;
+}
+.numbers-container>button:nth-of-type(10) {
+    width: 60%;
+}
+.operators-container {
+    /* width: 25%; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+}
+.operators-container>button {
+    background-color: #237293;
+}
